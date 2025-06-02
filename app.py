@@ -1,30 +1,41 @@
-import streamlit as st
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import image
+import gradio as gr
 import numpy as np
-from PIL import Image
+import cv2
+from tensorflow.keras.models import load_model
 
-# Load model
-model = load_model("melanoma_model.h5")
+# Load the trained model
+from keras.models import load_model
+model = load_model("melanoma_model.h5", compile=False)
+
 img_size = (128, 128)
 
-# Prediction function
-def predict_melanoma(img):
-    img = img.resize(img_size)
-    img_array = image.img_to_array(img) / 255.0
-    img_array = np.expand_dims(img_array, axis=0)
-    prediction = model.predict(img_array)[0][0]
-    label = "Melanoma" if prediction >= 0.5 else "Benign"
-    return label, prediction
+def predict(image):
+    # Resize and preprocess
+    img = cv2.resize(image, img_size)
+    img = img.astype("float32") / 255.0
+    img = np.expand_dims(img, axis=0)
 
-# Streamlit UI
-st.title("Melanoma Cancer Detection")
+    # Predict
+    prediction = model.predict(img)[0][0]
+    confidence = prediction * 100
 
-uploaded_file = st.file_uploader("Upload a skin lesion image", type=["jpg", "png", "jpeg"])
-if uploaded_file:
-    img = Image.open(uploaded_file)
-    st.image(img, caption='Uploaded Image', use_column_width=True)
-    
-    label, confidence = predict_melanoma(img)
-    st.write(f"**Prediction:** {label}")
-    st.write(f"**Confidence:** {confidence:.2f}")
+    if prediction >= 0.5:
+        label = "🧠 Prediction: Melanoma (Cancer)"
+        confidence_display = confidence
+    else:
+        label = "🧠 Prediction: Benign (Non-Cancer)"
+        confidence_display = 100 - confidence
+
+    return f"{label}\n📊 Detection Likelihood: {confidence_display:.2f}%"
+
+# Gradio Interface
+demo = gr.Interface(
+    fn=predict,
+    inputs=gr.Image(type="numpy", label="Upload Skin Image"),
+    outputs=gr.Textbox(label="Prediction Result"),
+    title="Melanoma Cancer Detection",
+    description="Upload a skin lesion image. The model predicts whether it's Melanoma (cancer) or Benign (non-cancer), with confidence."
+)
+
+if __name__ == "__main__":
+    demo.launch()
