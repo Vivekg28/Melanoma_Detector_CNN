@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Melanoma Cancer Detection using CNN</title>
-</head>
 <body>
 
 <h1>🧠 Melanoma Cancer Detection using CNN</h1>
