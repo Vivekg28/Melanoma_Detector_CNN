@@ -43,6 +43,23 @@ Our model is tuned to <b>maximize Recall without severely compromising Precision
 
 <hr>
 
+<h2>🧪 Test Report (Threshold = 0.5)</h2>
+<pre>
+              precision    recall  f1-score   support
+           0       0.90      0.85      0.87      1000
+           1       0.86      0.90      0.88      1000
+    accuracy                           0.88      2000
+   macro avg       0.88      0.88      0.87      2000
+ weighted avg       0.88      0.88      0.87      2000
+
+Test AUC: 0.9403
+Test Accuracy: 0.875
+Test Precision: 0.8565
+Test Recall: 0.901
+</pre>
+
+<hr>
+
 <h2>💡 Future Work</h2>
 <ul>
   <li>⚡ <b>Transfer Learning</b>: Use ResNet, EfficientNet for better accuracy.</li>
