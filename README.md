@@ -2,8 +2,6 @@
 <html lang="en">
 <body>
 
-<h1>🧠 Melanoma Cancer Detection using CNN</h1>
-
 <h2>📖 Introduction</h2>
 <p>
 Melanoma is one of the most aggressive forms of skin cancer, and <b>early detection is critical</b> for improving survival rates. 
