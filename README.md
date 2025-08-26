@@ -58,8 +58,6 @@ Our model is tuned to <b>maximize Recall without severely compromising Precision
 <p>
 <b>Vivek Gautam</b><br>
 MSc Data Science @ DAIICT<br>
-GitHub: <a href="https://github.com/yourusername">yourusername</a> | 
-LinkedIn: <a href="https://linkedin.com/in/yourprofile">yourprofile</a>
 </p>
 
 </body>
