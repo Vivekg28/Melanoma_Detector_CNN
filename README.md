@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Melanoma Cancer Detection using CNN</title>
+  <title>
 </head>
 <body>
 
