@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Melanoma Cancer Detection using CNN</title>
+</head>
 <body>
+
+<h1>🧠 Melanoma Cancer Detection using CNN</h1>
 
 <h2>📖 Introduction</h2>
 <p>
@@ -13,7 +19,7 @@ This project develops a <b>Convolutional Neural Network (CNN)</b> model to class
 <ul>
   <li>Data preprocessing and augmentation</li>
   <li>Model training with CNN</li>
-  <li>Performance evaluation using multiple metrics</li>
+  <li>Evaluation using multiple metrics</li>
   <li>Deployment using a Gradio web interface</li>
 </ul>
 
@@ -34,28 +40,6 @@ Our model is tuned to <b>maximize Recall without severely compromising Precision
 <ul>
   <li>Missing a melanoma case (false negative) can be life-threatening.</li>
   <li>High Recall ensures fewer undetected cancerous cases, even if some benign cases are flagged incorrectly.</li>
-</ul>
-
-<h3>📊 Example (Validation Results):</h3>
-<ul>
-  <li><b>Recall:</b> ~91%</li>
-  <li><b>Precision:</b> ~80%</li>
-  <li><b>Accuracy:</b> ~85%</li>
-  <li><b>AUC:</b> ~0.94</li>
-</ul>
-
-<p>
-This balance makes the model <b>safer for medical screening</b>.
-</p>
-
-<hr>
-
-<h2>📊 Model Performance</h2>
-<ul>
-  <li>Validation Accuracy: ~85%</li>
-  <li>Test Accuracy: ~88%</li>
-  <li>Test AUC Score: ~0.94</li>
-  <li>Recall prioritized while maintaining acceptable Precision</li>
 </ul>
 
 <hr>
